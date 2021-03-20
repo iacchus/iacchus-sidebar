@@ -1,0 +1,107 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>IACCHUS' HTML5 SIDEBAR</title>
+    <meta name="description" content="IACCHUS' HTML5 SIDEBAR">
+    <meta name="author" content="IACCHUS MERCURIUS">
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous">
+    </script>
+
+    <script>
+      $(document).ready(function(){
+        $("#comments-button").click(function(){
+          $("#sidebar").toggleClass('sidebar-closed');
+        });
+      });
+    </script>
+
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  height: 100%;
+}
+
+#iacchus-sidebar {
+  //display: none;
+  position: absolute;
+  width: 550px;
+  min-height: 100%;
+  height: 100%;
+  max-height: 100%;
+  //border: 1px solid #ccc;
+  /border-left: 1px solid #ccc;
+  background-color: #ddd;
+  right: 0;
+  //right: -550px;
+  transition: right 1s ease;
+}
+
+#iacchus-sidebar-button {
+  width: 120px;
+  height: 42px;
+  position: relative;
+  position: absolute;
+
+  border: 1px solid #aaa;
+  background-color: #ccc;
+  left: -84px;
+  top: calc(50% - 21px);
+  /top: 50%;
+  transform: rotate(-90deg);
+  transform-origin: center; 
+
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#iacchus-sidebar-label {
+  width: 120px;
+  height: 42px;
+  line-height: 42px;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: hidden;
+}
+
+#iacchus-sidebar-content {
+  //margin: 1em;
+  margin: 0;
+  padding: 0 1em;
+}
+
+.iacchus-sidebar-closed {
+  right: -550px !important;
+}
+
+    </style>
+  </head>
+
+  <body>
+    <div id="iacchus-sidebar" class="iacchus-sidebar-closed">
+      <div id="iacchus-sidebar-button">
+        <span id="iacchus-sidebar-label">Comments</span>
+      </div>
+      <div id="iacchus-sidebar-content">
+        <h1 id="iacchus-sidebar-post-title">
+          Comments on "Post"
+        <h1/>
+      </div>
+    </div>
+  </body>
+
+</html>
+
